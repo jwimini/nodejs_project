@@ -33,12 +33,13 @@ module.exports = db;
 app.get('/', function(req,res) {
     res.render('index');
 })
-
+// 로그아웃
 app.get('/logout', function(req, res){
     res.clearCookie('id');
     res.clearCookie('name').redirect('/');
 })
 
+// 생성된 프로젝트, 공지 불러오기
 app.get("/main", function(req,res){ 
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -57,13 +58,14 @@ app.get("/main", function(req,res){
         }); 
     }); 
 })
-
+// 프로젝트 추가
 app.get("/addProject", function(req,res){ 
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
     res.render('addProject', {userId:userId, userName:userName});
 })
 
+// 공지사항
 app.get("/main/notice", function(req,res){ 
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -76,6 +78,7 @@ app.get("/main/notice", function(req,res){
     });
 })
 
+// 프로젝트 수정
 app.get("/main/:id/editProject", function(req,res){ 
     const id = req.params.id;
     var date = req.query.date;
@@ -90,7 +93,7 @@ app.get("/main/:id/editProject", function(req,res){
     });
 })
 
-
+// 캘린더 생성
 app.get("/main/:id/calender", function(req,res){ 
     const id = req.params.id;
     var date = req.query.date;
@@ -123,6 +126,7 @@ app.get("/main/:id/calender", function(req,res){
     });
 })
 
+// 캘린더에서 스케줄 추가
 app.get("/main/:id/calender/addSchedule", function(req,res){
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -139,6 +143,7 @@ app.get("/main/:id/calender/addSchedule/addSche", function(req,res){
     res.send("<script>window.location.replace('/main/" + id +"/calender');</script>");
 })
 
+// 회의록 불러오기
 app.get("/main/:id/meeting", function(req,res){ 
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -159,6 +164,7 @@ app.get("/main/:id/meeting", function(req,res){
     });
 })
 
+// 회의록 추가
 app.get("/main/:id/meeting/addMeeting", function(req,res){
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -214,11 +220,12 @@ app.get("/main/:id/notice/addNotice/addNot", function(req,res){
 
     res.send("<script>window.location.replace('/main/" + id +"/notice');</script>");
 })
-
+// 회원 가입
 app.get("/register", function(req,res){ 
     res.render('register'); 
 })
 
+// 회원 가입시 보내기
 app.get("/send", function(req,res){ 
     var name = req.query.name; 
     var id = req.query.id;
@@ -247,6 +254,7 @@ app.get("/login", function(req, res){
     res.render('login');
 });
 
+// 로그인 할때
 app.get("/trylogin", function(req,res){
     var id = req.query.id;
     var password = req.query.password;
@@ -268,7 +276,7 @@ app.get("/trylogin", function(req,res){
     });
     
 })
-
+// 프로젝트 생성시
 app.get("/create", function(req,res){ 
     var color = req.query.color;
     var title = req.query.title;
@@ -342,6 +350,7 @@ app.get("/create", function(req,res){
     }
 })
 
+// 프로젝트 수정
 app.get("/main/:id/editPro", function(req,res){ 
     var color = req.query.color;
     var title = req.query.title;
@@ -408,6 +417,7 @@ app.get("/main/:id/editPro", function(req,res){
     }
 })
 
+// 프로젝트 삭제
 app.get("/main/:id/delete", function(req,res){ 
     var id = req.params.id;
 
@@ -422,6 +432,7 @@ app.get("/main/:id/delete", function(req,res){
  })
 
 
+ // 투두 불러오기
 app.get("/main/:id/todo", function(req,res){ 
     var id = req.params.id;
     var userId = req.cookies['id'];
@@ -443,6 +454,7 @@ app.get("/main/:id/todo", function(req,res){
     });
  })
 
+ // 투두 추가
  app.get("/main/:id/todo/addTodo", function(req,res){ 
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -465,6 +477,7 @@ app.get("/main/:id/todo", function(req,res){
     
  })
 
+// 투두 체크시 순서 변경
  app.get("/main/:id/todo/changeTodo", function(req,res){ 
     var userId = req.cookies['id'];
     var userName = req.cookies['name'];
@@ -477,6 +490,7 @@ app.get("/main/:id/todo", function(req,res){
     
  })
 
+ // 투두 내용 전체 삭제
  app.get("/main/:id/todo/deleteAll", function(req,res){ 
     var userId = req.cookies['id'];
     var id = req.params.id;
