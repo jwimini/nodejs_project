@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#banner{
+    border-bottom: #798FBA 1.5px solid;
+    width:100%;
+    
+}
+#newImg{
+    width: 70px;
+    height: 70px; 
+    float:left;
+    margin-left: 80px;
+    margin-right: 13px;
+    margin-bottom: 2px;
+}
+
+#newImg img{
+    width: 64px;
+    height: 64px; 
+    position: relative;
+    bottom: 5px;
+}
+
+#banner p{
+    margin-left: 1%;
+}
+.titleNt{
+    font-family: paybooc-Bold;
+    margin-top: 10px;
+}
+.titleNt a{
+    font-size: 25pt;
+}
+.titleNotice{
+    font-size: 15pt;
+    margin-bottom: 10px;
+}
+.projectNt{
+    font-family: paybooc-Bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.project{
+    font-family: paybooc-Bold;
+}
+.info{
+    color: rgb(255, 255, 255);
+} 
+
+.pj{
+    width: 460px;
+    height: 320px;
+    border: solid 1px rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: inline-block;
+    border-radius: 20px;
+}
+.pj > a > h2{
+    margin-top: 100px;
+}
+.pj > a > p{
+    margin-top: 30px;
+}
+
+#top{
+    min-height: 600px;
+    padding: 25px 142px;
+}
+
+.column{
+    display: inline-block;
+}
+.addButton{
+    width: 50px;
+    height: 50px;
+    background-color: #798FBA;
+    border-radius: 50px;
+}
+.plus{
+    width: 50px;
+    height:50px;
+}
+
+#empty{
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#emptyNotice{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.notice p{
+    margin-left: 20px;
+    font-family: paybooc-Bold;
+    
+}
+.title{
+    font-size: 20px;
+    font-style: bold;
+}
+.name{
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+.date{
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+.sep{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(140, 137, 137);
+    font-size: 15px;
+}
+
+.name_date{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
